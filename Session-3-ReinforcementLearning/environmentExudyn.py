@@ -101,16 +101,22 @@ class InvertedNPendulumEnv(OpenAIGymInterfaceEnv):
         else: 
             self.flagContinuous = True 
         self.nTotalLinks = self.nLinks+1 # the (prismatically constrained) base is also a link
+
+        self.gravity = kwargs.get("gravity", 9.81)
+        self.length  = kwargs.get("length", 1.0)
+        self.masscart = kwargs.get("massCart", 1.0)
+        self.massarm  = kwargs.get("massArm", 0.1)        
+        self.max_steps= kwargs.get("maxSteps", 2000)        
+
         
-        
-        gravity = 9.81
-        self.length = 1.
         width = 0.1*self.length
-        masscart = 1.
-        massarm = 0.1
+        gravity = self.gravity
+        length = self.length
+        masscart = self.masscart
+        massarm = self.massarm
         total_mass = massarm + masscart
-        armInertia = self.length**2*0.5*massarm #for a rod with equally distributed mass, correctly, it would read self.length**2*massarm/3; using here the values of previous research
-        
+        armInertia = length**2*0.5*massarm #for a rod with equally distributed mass, correctly, it would read self.length**2*massarm/3; using here the values of previous research
+
         # environment variables  and force magnitudes and are taken from the  
         # paper "Reliability evaluation of reinforcement learning methods for 
         # mechanical systems with increasing complexity", Manzl et al. 
@@ -139,7 +145,7 @@ class InvertedNPendulumEnv(OpenAIGymInterfaceEnv):
         oGround=self.mbs.AddObject(ObjectGround(referencePosition= [0,0,0],  #x-pos,y-pos,angle
                                            visualization=VObjectGround(graphicsData= [background])))
 
-
+        
         #build kinematic tree with Robot class
         L = self.length
         w = width
@@ -286,7 +292,7 @@ class InvertedNPendulumEnv(OpenAIGymInterfaceEnv):
             or cartPosX > self.x_threshold
             or max(statesVector[1:self.nTotalLinks]) > self.theta_threshold_radians 
             or min(statesVector[1:self.nTotalLinks]) < -self.theta_threshold_radians 
-            # or self.rewardCnt > 2000 # here the environment could also be reset if it managed to stabilize for N_episode_max steps. 
+            or self.rewardCnt > self.max_steps # here the environment could also be reset if it managed to stabilize for N_episode_max steps. 
             )
         # print("cartPosX: ", cartPosX, ", done: ", done) 
         return done

@@ -1,5 +1,5 @@
-exudyn==1.9.0
-stable-baselines3[extra]>=2.0.0,<=2.7.0
+exudyn>=1.9.0
+stable-baselines3[extra]==2.8.0
 matplotlib
 scipy
 tensorboard
@@ -10,8 +10,15 @@ jupyterlab-rise
 ipywidgets 
 scikit-learn
 hf_xet
+jupyterlab
+ipywidgets
 
-gpt4all
 transformers
+accelerate
 openai
 dotenv
+librosa
+opencv-python
+mistral-common[opencv]
+torchvision
+
