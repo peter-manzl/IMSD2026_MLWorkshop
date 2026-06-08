@@ -4,12 +4,12 @@ The workshop is a part of the [8th International Conference on Multibody Dynamic
 
 The [Workshop on machine learning in multibody systems](https://www.imsd2026.es/workshop.html) will be held on **Monday, June 15 (9:30 AM - 6:30 PM)**.
 
-The workshop will take 8h in total with a break at 1:30 PM.
+The workshop will take 8h in total with a lunch break at 1:30 PM.
 
 ## Workshop Details
 
 **Lecturers:**
-[Grzegorz Orzechowski](https://www.lut.fi/en/profiles/grzegorz-orzechowski) ([LUT University](https://www.lut.fi/en)) and [Peter Manzl](https://www.uibk.ac.at/en/mechatronik/mekt/staff/) ([University of Augsburg](https://www.uni-augsburg.de/en/fakultaet/mntf/mrm/), previously [University of Innsbruck](https://www.uibk.ac.at/en/))
+[Grzegorz Orzechowski](https://www.lut.fi/en/profiles/grzegorz-orzechowski) ([LUT University](https://www.lut.fi/en)) and [Johannes Gerstmayr](https://www.uibk.ac.at/en/mechatronik/mekt/staff/) ([University of Innsbruck](https://www.uibk.ac.at/en/)), substituting for [Peter Manzl](https://www.uibk.ac.at/en/mechatronik/mekt/staff/) ([University of Augsburg](https://www.uni-augsburg.de/en/fakultaet/mntf/mrm/), previously at University of Innsbruck). 
 
 ### Description
 
